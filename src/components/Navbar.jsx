@@ -25,26 +25,31 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
+            className={`fixed w-full z-50 transition-all duration-300 ${scrolled
+                ? 'bg-white/90 backdrop-blur-xl border-b border-muted/80 shadow-[0_8px_30px_rgba(15,23,42,0.08)] py-3'
+                : 'bg-white/80 backdrop-blur-xl border-b border-muted/60 shadow-[0_8px_30px_rgba(15,23,42,0.06)] py-4'
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <Link to="/" className="flex items-center gap-2 group">
-                    <div className="bg-primary p-2 rounded-full text-white group-hover:scale-110 transition-transform">
-                        <Music size={24} />
+                <Link to="/" className="flex items-center gap-3 group">
+                    <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                        <Music size={20} />
                     </div>
-                    <span className={`text-xl font-display font-bold ${scrolled ? 'text-dark' : 'text-dark'}`}>
-                        무거 버스커 마을
-                    </span>
+                    <div className="flex flex-col leading-tight">
+                        <span className="text-xs uppercase tracking-[0.25em] text-gray-500">Mugeo</span>
+                        <span className="text-xl font-display font-semibold text-dark">
+                            무거 버스커 마을
+                        </span>
+                    </div>
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden md:flex items-center gap-6 lg:gap-10">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             to={link.path}
-                            className={`relative font-medium transition-colors ${location.pathname === link.path ? 'text-primary' : 'text-dark hover:text-primary'
+                            className={`relative text-sm font-semibold uppercase tracking-[0.08em] transition-colors ${location.pathname === link.path ? 'text-primary' : 'text-gray-800 hover:text-primary'
                                 }`}
                         >
                             {link.name}
@@ -73,13 +78,13 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-6 flex flex-col gap-4"
+                    className="md:hidden absolute top-full left-0 w-full bg-white/90 backdrop-blur-xl shadow-lg py-5 px-6 flex flex-col gap-4 border-b border-muted/60"
                 >
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             to={link.path}
-                            className={`text-lg font-medium ${location.pathname === link.path ? 'text-primary' : 'text-dark'
+                            className={`text-base font-semibold ${location.pathname === link.path ? 'text-primary' : 'text-dark hover:text-primary'
                                 }`}
                             onClick={() => setIsOpen(false)}
                         >

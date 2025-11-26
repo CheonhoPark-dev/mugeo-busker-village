@@ -3,73 +3,68 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <div className="py-12 md:py-24">
+        <div className="py-16 md:py-24 bg-light">
             <div className="container mx-auto px-6">
-                {/* Introduction */}
-                <div className="max-w-4xl mx-auto mb-20">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-5xl font-display font-bold mb-8 text-center text-dark"
-                    >
-                        무거 버스커 마을 소개
-                    </motion.h2>
-
+                <div className="max-w-5xl mx-auto space-y-16">
+                    {/* Introduction */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 text-lg leading-relaxed text-gray-700 space-y-6"
+                        className="bg-white/80 backdrop-blur-sm border border-muted/70 rounded-3xl p-10 md:p-14 shadow-[0_20px_60px_rgba(15,23,42,0.06)]"
                     >
-                        <p>
-                            <span className="font-bold text-primary text-xl">기타를 잘 치는 것보다 즐기는 것을 추구하는 모임입니다.</span>
-                        </p>
-                        <p>
-                            무거동 주민이라면 누구나 부담 없이 참여하고 자유롭고 편하게 즐길 수 있습니다.
-                            우리는 화려한 기술이나 뛰어난 실력보다, 음악을 대하는 <strong>진심</strong>과
-                            순간에 대한 <strong>몰입</strong>을 더 소중하게 생각합니다.
-                        </p>
-                        <p>
-                            기타를 좋아하는 마음만 있다면 언제나 당신을 환영합니다.
-                            함께 연주하고, 노래하며, 우리 마을의 이야기를 만들어가요.
-                        </p>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted/60 text-xs uppercase tracking-[0.15em] text-gray-700 mb-6">
+                            About · Philosophy
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-display text-dark mb-6">무거 버스커 마을 소개</h2>
+                        <div className="text-lg leading-relaxed text-gray-700 space-y-5 break-keep">
+                            <p>
+                                <span className="font-bold text-primary text-xl">기타를 잘 치는 것보다 즐기는 것을 추구하는 모임입니다.</span>
+                            </p>
+                            <p>
+                                무거동 주민이라면 누구나 부담 없이 참여하고 자유롭고 편하게 즐길 수 있습니다.
+                                우리는 화려한 기술이나 뛰어난 실력보다, 음악을 대하는 <strong>진심</strong>과
+                                순간에 대한 <strong>몰입</strong>을 더 소중하게 생각합니다.
+                            </p>
+                            <p>
+                                기타를 좋아하는 마음만 있다면 언제나 당신을 환영합니다.
+                                함께 연주하고, 노래하며, 우리 마을의 이야기를 만들어가요.
+                            </p>
+                        </div>
                     </motion.div>
-                </div>
 
-                {/* History */}
-                <div className="max-w-3xl mx-auto">
-                    <h3 className="text-3xl font-display font-bold mb-12 text-center">우리가 걸어온 길</h3>
+                    {/* History */}
+                    <div className="bg-white border border-muted/70 rounded-3xl p-10 md:p-12 shadow-[0_15px_50px_rgba(15,23,42,0.05)]">
+                        <h3 className="text-3xl font-display text-dark mb-8">우리가 걸어온 길</h3>
 
-                    <div className="relative border-l-2 border-primary/30 ml-4 md:ml-0 space-y-12">
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="relative pl-8 md:pl-12"
-                        >
-                            <div className="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-primary border-4 border-white shadow-sm" />
-                            <span className="text-sm font-bold text-primary tracking-wider uppercase mb-2 block">2025.11.23</span>
-                            <h4 className="text-xl font-bold text-dark mb-2">무거천 플래시몹</h4>
-                            <p className="text-gray-600">
-                                무거천에서 진행된 첫 번째 대규모 플래시몹 행사.
-                                많은 주민들과 함께 음악의 즐거움을 나누었습니다.
-                            </p>
-                        </motion.div>
+                        <div className="relative pl-6 md:pl-10">
+                            <div className="absolute left-2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-muted to-transparent" />
 
-                        {/* Placeholder for future history */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="relative pl-8 md:pl-12 opacity-50"
-                        >
-                            <div className="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-gray-300 border-4 border-white" />
-                            <span className="text-sm font-bold text-gray-400 tracking-wider uppercase mb-2 block">Coming Soon</span>
-                            <h4 className="text-xl font-bold text-gray-400 mb-2">다음 이야기</h4>
-                            <p className="text-gray-400">
-                                무거 버스커 마을의 다음 이야기가 곧 시작됩니다.
-                            </p>
-                        </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="relative pl-8 pb-10"
+                            >
+                                <div className="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-primary shadow-lg" />
+                                <span className="text-sm font-semibold text-primary tracking-[0.12em] uppercase">2025.11.23</span>
+                                <h4 className="text-2xl font-semibold text-dark mt-2 mb-2">무거천 플래시몹</h4>
+                                <p className="text-gray-600 leading-relaxed break-keep">
+                                    무거천에서 진행된 첫 번째 대규모 플래시몹 행사. 많은 주민들과 함께 음악의 즐거움을 나누었습니다.
+                                </p>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="relative pl-8 opacity-60"
+                            >
+                                <div className="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-muted" />
+                                <span className="text-sm font-semibold text-gray-500 tracking-[0.12em] uppercase">Coming Soon</span>
+                                <h4 className="text-2xl font-semibold text-gray-600 mt-2 mb-2">다음 이야기</h4>
+                                <p className="text-gray-500 leading-relaxed break-keep">무거 버스커 마을의 다음 이야기가 곧 시작됩니다.</p>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>
