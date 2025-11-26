@@ -38,9 +38,10 @@ const Home = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 leading-tight tracking-tight"
+                        className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 leading-tight tracking-tight break-keep"
                     >
-                        기타를 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">즐기는 것</span>에<br />
+                        기타를 <br className="md:hidden" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">즐기는 것</span>에<br />
                         진심인 우리들
                     </motion.h1>
 
@@ -48,9 +49,9 @@ const Home = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto text-gray-200 font-light leading-relaxed"
+                        className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto text-gray-200 font-light leading-relaxed break-keep"
                     >
-                        무거동 주민이라면 누구나 부담 없이 참여하고<br className="hidden md:block" />
+                        무거동 주민이라면 누구나 부담 없이 참여하고 <br className="hidden md:block" />
                         자유롭고 편하게 즐길 수 있는 문화 놀이터
                     </motion.p>
 
@@ -96,7 +97,7 @@ const Home = () => {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <span className="text-primary font-bold tracking-wider uppercase text-sm">Core Values</span>
-                        <h2 className="text-4xl md:text-5xl font-display font-bold mt-2 text-dark">우리가 추구하는 가치</h2>
+                        <h2 className="text-4xl md:text-5xl font-display font-bold mt-2 text-dark break-keep">우리가 추구하는 가치</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -139,38 +140,43 @@ const Home = () => {
             </section>
 
             {/* Latest Moments Preview */}
-            <section className="py-24 bg-dark text-white overflow-hidden relative">
+            <section className="py-24 bg-white overflow-hidden relative">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                         <div>
                             <span className="text-accent font-bold tracking-wider uppercase text-sm">Gallery</span>
-                            <h2 className="text-4xl md:text-5xl font-display font-bold mt-2">생생한 활동 모습</h2>
+                            <h2 className="text-4xl md:text-5xl font-display font-bold mt-2 text-dark">생생한 활동 모습</h2>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[600px] relative">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Large Image */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="md:col-span-2 relative group overflow-hidden rounded-2xl"
+                            className="relative group overflow-hidden rounded-3xl aspect-[4/3] md:aspect-auto md:h-full"
                         >
                             <img src="/images/activate_2.jpg" alt="Gallery 1" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
-                                <p className="text-lg font-bold">함께하는 즐거움</p>
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                            <div className="absolute bottom-0 left-0 p-8">
+                                <p className="text-white text-2xl font-bold whitespace-nowrap">함께하는 즐거움</p>
                             </div>
                         </motion.div>
-                        <div className="md:col-span-2 grid grid-rows-2 gap-4">
+
+                        {/* Stacked Images */}
+                        <div className="flex flex-col gap-6">
                             <motion.div
                                 initial={{ opacity: 0, x: 50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="relative group overflow-hidden rounded-2xl"
+                                className="relative group overflow-hidden rounded-3xl aspect-[16/9]"
                             >
                                 <img src="/images/activate_3.jpg" alt="Gallery 2" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                    <p className="font-bold">열정적인 연주</p>
+                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                                <div className="absolute bottom-0 left-0 p-6">
+                                    <p className="text-white text-xl font-bold whitespace-nowrap">열정적인 연주</p>
                                 </div>
                             </motion.div>
                             <motion.div
@@ -178,24 +184,22 @@ const Home = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 }}
-                                className="relative group overflow-hidden rounded-2xl"
+                                className="relative group overflow-hidden rounded-3xl aspect-[16/9]"
                             >
                                 <img src="/images/activate_4.jpg" alt="Gallery 3" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                    <p className="font-bold">소통하는 시간</p>
+                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                                <div className="absolute bottom-0 left-0 p-6">
+                                    <p className="text-white text-xl font-bold whitespace-nowrap">소통하는 시간</p>
                                 </div>
                             </motion.div>
                         </div>
-
-                        {/* Fade out overlay */}
-                        <div className="absolute inset-x-0 bottom-0 h-60 bg-gradient-to-t from-dark via-dark/80 to-transparent z-10 pointer-events-none" />
                     </div>
 
                     {/* More Button */}
-                    <div className="flex justify-center mt-8 relative z-20">
+                    <div className="flex justify-center mt-12">
                         <Link
                             to="/activities"
-                            className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-3 rounded-full font-bold transition-all"
+                            className="group flex items-center gap-2 bg-dark text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-black transition-all hover:scale-105"
                         >
                             더 많은 활동 보기 <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
@@ -211,7 +215,7 @@ const Home = () => {
                     <div className="bg-white rounded-[3rem] p-12 md:p-20 text-center shadow-xl border border-gray-100 relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-secondary to-accent" />
 
-                        <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 text-dark">
+                        <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 text-dark break-keep">
                             당신의 기타 소리를<br />
                             들려주세요
                         </h2>
