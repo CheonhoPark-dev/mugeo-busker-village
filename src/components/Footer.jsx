@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, Instagram } from 'lucide-react';
+import { Mail, Instagram } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -19,11 +19,11 @@ const Footer = () => {
                             <h4 className="text-sm uppercase tracking-[0.15em] text-white/70">Contact</h4>
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
-                                    <Phone size={18} />
+                                    <Mail size={18} />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-white/70">담당자</p>
-                                    <p className="font-semibold">하해송 · 010-9388-5356</p>
+                                    <p className="text-sm text-white/70">이메일</p>
+                                    <p className="font-semibold">gkgothd@naver.com</p>
                                 </div>
                             </div>
                         </div>

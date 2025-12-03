@@ -26,8 +26,8 @@ const Home = () => {
     ];
 
     const galleryShots = [
-        { src: '/images/activate_3.jpg', title: '열정적인 연주' },
-        { src: '/images/activate_4.jpg', title: '소통하는 시간' },
+        { src: '/images/flash_mob_2.jpg', title: '열정적인 연주' },
+        { src: '/images/flash_mob_1.jpg', title: '소통하는 시간' },
     ];
 
     return (
@@ -35,9 +35,12 @@ const Home = () => {
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center overflow-hidden">
                 <motion.div style={{ y: y1 }} className="absolute inset-0 z-0">
-                    <img
-                        src="/images/activate_1.jpg"
-                        alt="Busking Performance"
+                    <video
+                        src="/videos/busker-video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className="w-full h-full object-cover scale-[1.08]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-dark/85 via-dark/60 to-dark" />
@@ -172,7 +175,7 @@ const Home = () => {
                             viewport={{ once: true }}
                             className="relative overflow-hidden rounded-3xl aspect-[4/3] md:aspect-auto md:h-full group"
                         >
-                            <img src="/images/activate_2.jpg" alt="함께하는 즐거움" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <img src="/images/flash_mob_3.jpg" alt="함께하는 즐거움" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/20 to-transparent" />
                             <div className="absolute bottom-0 left-0 p-8 text-white space-y-1">
                                 <p className="text-sm uppercase tracking-[0.18em] text-white/70">Moment</p>

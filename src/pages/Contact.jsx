@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MapPin, MessageCircle } from 'lucide-react';
+import { MapPin, MessageCircle, Mail } from 'lucide-react';
 
 const Contact = () => {
     return (
@@ -29,12 +29,12 @@ const Contact = () => {
                         <div className="space-y-8">
                             <div className="flex items-start gap-5">
                                 <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
-                                    <Phone size={24} />
+                                    <Mail size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-xs uppercase tracking-[0.15em] text-gray-500 font-semibold mb-1">담당자 연락처</p>
-                                    <p className="text-2xl font-semibold text-dark">010-9388-5356</p>
-                                    <p className="text-lg text-gray-600">하해송</p>
+                                    <p className="text-xs uppercase tracking-[0.15em] text-gray-500 font-semibold mb-1">이메일</p>
+                                    <p className="text-2xl font-semibold text-dark">gkgothd@naver.com</p>
+                                    <p className="text-lg text-gray-600">문의사항을 보내주세요</p>
                                 </div>
                             </div>
 
